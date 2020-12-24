@@ -65,7 +65,7 @@ def xmaslight():
     up = True
 
     #wether the radius of the sphere is going up or not (in which case it is going down)
-    UP = 1
+    Up = 1
 
     # pause between cycles (normally zero as it is already quite slow)
     slow = 0
@@ -95,24 +95,24 @@ def xmaslight():
             LED += 1
         
 
-        #this code inflates and shrinks a moving sphere of lights
+        #this code determines the direction to move the sphere in
         if up == True and centre[2] >= int((0.66 * float(max_alt))+0.5):
             up = False
         elif up == False and centre[2] >= int((0.66 * float(min_alt))+0.5):
             up = True
         
-        rad += UP
-        if(rad>=45):
-            UP=-1
-        elif(rad<=5):
-            UP=1
-
-        #this is the code that moves the sphere of lights
+	#this is the code that moves the sphere of lights
         if up == True:
             centre[2] += 10
         else:
             centre[2] -= 10
-
+	
+	#this code inflates and shrinks a moving sphere of lights
+        rad += Up
+        if(rad>=45):
+            Up=-1
+        elif(rad<=5):
+            Up=1
 
         # here I cycle through the different colours, the  transition is not always smooth but it gets the job done
         colourA[2]+=5
