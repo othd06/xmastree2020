@@ -96,9 +96,9 @@ def xmaslight():
         
 
         #this code determines the direction to move the sphere in
-        if up == True and centre[2] <= int((0.66 * float(max_alt))+0.5):
+        if up == True and centre[2] >= int((0.66 * float(max_alt))+0.5):
             up = False
-        elif up == False and centre[2] >= int((0.66 * float(min_alt))+0.5):
+        elif up == False and centre[2] <= int((0.66 * float(min_alt))+0.5):
             up = True
         
 	#this is the code that moves the sphere of lights
