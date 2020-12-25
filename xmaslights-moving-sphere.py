@@ -88,7 +88,7 @@ def xmaslight():
         #this tests if the given led in within the range of the sphere and sets it to either off(colourB) or on with some cycling colour(colourA)
         LED = 0
         while LED < len(coords):
-            if rad**2 <= (coords[LED][0]-centre[0])**2 + (coords[LED][1]-centre[1])**2 + (coords[LED][2]-centre[2])**2:
+            if rad**2 >= (coords[LED][0]-centre[0])**2 + (coords[LED][1]-centre[1])**2 + (coords[LED][2]-centre[2])**2:
                 pixels[LED] = colourA
             else:
                 pixels[LED] = colourB
